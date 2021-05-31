@@ -2,10 +2,14 @@ package com.mycompany.dvdstore.web.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.mycompany.dvdstore.core.entity.Movie;
 import com.mycompany.dvdstore.core.service.IMovieService;
 
 @Controller
@@ -23,12 +27,19 @@ public class MovieController
 		this.movieService = movieService;
 	}
 
-	@RequestMapping("/{id}")
+	@GetMapping("/{id}")
 	public ModelAndView displayMovieCard(@PathVariable("id") Long id)
 	{
 		ModelAndView mv = new ModelAndView("movie-details");
 		mv.addObject("movie" , movieService.getMovieById(id));
 		return mv;
+	}
+	
+	@PostMapping("")
+	public String addMovie(@ModelAttribute("movie") Movie movie)
+	{
+		movieService.registerMovie(movie);
+		return "movie-added";
 	}
 
 }

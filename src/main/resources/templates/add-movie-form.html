@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>DVD Store</title>
+	</head>
+	
+	<body>
+		
+		<form th:action="@{/movie}" method="post" th:object="${movie}">
+			<p>
+				<label for = "title">Titre du film :</label>
+				<input type="text" name = "title" id = "title" th:field="*{title}"/>
+			</p>
+			<p>
+				<label for = "title">Genre du film :</label>
+				<input type="text" name = "genre" id = "genre" th:field="*{genre}"/>
+			</p>
+			<p>
+				<label for = "title">Description du film :</label>
+				<input type="text" name = "description" id = "description" th:field="*{description}"/>
+			</p>
+			<input type="submit" value="Add Movie"/>
+		</form>
+		
+	</body>
+	
+</html>
