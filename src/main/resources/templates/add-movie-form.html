@@ -9,10 +9,13 @@
 	<body>
 		
 		<form th:action="@{/movie}" method="post" th:object="${movieForm}">
+		
 			<p>
 				<label for = "title">Titre du film :</label>
 				<input type="text" name = "title" id = "title" th:field="*{title}"/>
 			</p>
+			<div th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></div>
+			
 			<p>
 				<label for = "title">Genre du film :</label>
 				<select th:field="*{genre}">
@@ -26,10 +29,14 @@
 				   <option th:value="ANIMATION" th:text="Animation"></option>
 				</select>
 			</p>
+			<div th:if="${#fields.hasErrors('genre')}" th:errors="*{genre}"></div>
+		
 			<p>
 				<label for = "title">Description du film :</label>
 				<textarea name = "description" id = "description" th:field="*{description}"></textarea>
 			</p>
+			<div th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></div>
+		
 			<input type="submit" value="Add Movie"/>
 		</form>
 		
