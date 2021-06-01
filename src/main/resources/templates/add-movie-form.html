@@ -8,18 +8,27 @@
 	
 	<body>
 		
-		<form th:action="@{/movie}" method="post" th:object="${movie}">
+		<form th:action="@{/movie}" method="post" th:object="${movieForm}">
 			<p>
 				<label for = "title">Titre du film :</label>
 				<input type="text" name = "title" id = "title" th:field="*{title}"/>
 			</p>
 			<p>
 				<label for = "title">Genre du film :</label>
-				<input type="text" name = "genre" id = "genre" th:field="*{genre}"/>
+				<select th:field="*{genre}">
+				   <option th:value="COMEDIE" th:text="Comédie"></option>
+				   <option th:value="HORREUR" th:text="Horreur"></option>
+				   <option th:value="THRILLER" th:text="Thriller"></option>
+				   <option th:value="FICtiON" th:text="Fiction"></option>
+				   <option th:value="ACTION" th:text="Action"></option>
+				   <option th:value="ROMANTIQUE" th:text="Romantique"></option>
+				   <option th:value="DRAME" th:text="Drame"></option>
+				   <option th:value="ANIMATION" th:text="Animation"></option>
+				</select>
 			</p>
 			<p>
 				<label for = "title">Description du film :</label>
-				<input type="text" name = "description" id = "description" th:field="*{description}"/>
+				<textarea name = "description" id = "description" th:field="*{description}"></textarea>
 			</p>
 			<input type="submit" value="Add Movie"/>
 		</form>

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import com.mycompany.dvdstore.core.entity.Movie;
 import com.mycompany.dvdstore.core.service.IMovieService;
+import com.mycompany.dvdstore.web.form.MovieForm;
 
 @Controller
 public class HomeController {
@@ -31,7 +32,7 @@ public class HomeController {
 	}
 	
 	@GetMapping("/add-movie-form")
-	public void displayMovieForm(@ModelAttribute("movie") Movie movie)
+	public void displayMovieForm(@ModelAttribute("movieForm") MovieForm movie)
 	{
 		
 	}
