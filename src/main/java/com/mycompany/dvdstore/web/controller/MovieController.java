@@ -31,15 +31,15 @@ public class MovieController
 		this.movieService = movieService;
 	}
 
-	@GetMapping("/{id}")
+	/*@GetMapping("/{id}")
 	public ModelAndView displayMovieCard(@PathVariable("id") Long id)
 	{
 		ModelAndView mv = new ModelAndView("movie-details");
 		mv.addObject("movie" , movieService.getMovieById(id));
 		return mv;
-	}
+	}*/
 	
-	@PostMapping("")
+	/*@PostMapping("")
 	public String addMovie(@Valid @ModelAttribute("movieForm") MovieForm movieForm , BindingResult results)
 	{
 		
@@ -55,6 +55,6 @@ public class MovieController
 		movie.setDescription(movieForm.getDescription()); 
 		movieService.registerMovie(movie);
 		return "movie-added";
-	}
+	}*/
 
 }
