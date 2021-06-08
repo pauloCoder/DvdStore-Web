@@ -30,8 +30,7 @@ public class MovieResource
 	@GetMapping("")
 	public List<Movie> list()
 	{
-		List<Movie> movies =  movieService.getMovieList();
-		return movies;
+		return  movieService.getMovieList();
 	}
 
 	@GetMapping("/{id}")

@@ -39,22 +39,27 @@ public class MovieController
 		return mv;
 	}*/
 	
-	/*@PostMapping("")
-	public String addMovie(@Valid @ModelAttribute("movieForm") MovieForm movieForm , BindingResult results)
+	/*@GetMapping("/dvdstore-home")
+	public void displayHome()
 	{
 		
+	}*/
+	
+	@PostMapping("/add")
+	public String addMovie(@Valid @ModelAttribute("movieForm") MovieForm movieForm , BindingResult results)
+	{
 		if (results.hasErrors())
 		{
 			return "add-movie-form";
 		}
 		
 		Movie movie = new Movie();
-		movie.setId(movieForm.getId());
+		movie.setId(movieForm.getId());		
 		movie.setTitle(movieForm.getTitle());
 		movie.setGenre(movieForm.getGenre());
 		movie.setDescription(movieForm.getDescription()); 
 		movieService.registerMovie(movie);
 		return "movie-added";
-	}*/
+	}
 
 }
