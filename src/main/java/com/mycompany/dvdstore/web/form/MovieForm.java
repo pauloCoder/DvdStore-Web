@@ -14,6 +14,13 @@ public class MovieForm
 	@Size(max = 255 , message = "Entrez une description de 255 caractères au plus") 
 	private String description;
 	
+	@Size(max = 20 , message = "Entrez un nom de 255 caractères au plus") 
+	private String nom;
+	
+	@Size(max = 20 , message = "Entrez un prénom de 255 caractères au plus") 
+	private String prenom;
+	
+	
 	public MovieForm()
 	{
 		
@@ -49,6 +56,22 @@ public class MovieForm
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public String getPrenom() {
+		return prenom;
+	}
+
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
 	}
 	
 }

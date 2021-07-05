@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.mycompany.dvdstore.core.entity.Actor;
 import com.mycompany.dvdstore.core.entity.Movie;
 import com.mycompany.dvdstore.core.service.IMovieService;
 import com.mycompany.dvdstore.web.form.MovieForm;
@@ -53,8 +54,14 @@ public class MovieController
 			return "add-movie-form";
 		}
 		
+		Actor actor = new Actor();
 		Movie movie = new Movie();
-		movie.setId(movieForm.getId());		
+		
+		actor.setFirstName(movieForm.getPrenom());
+		actor.setLastName(movieForm.getNom());
+		
+		movie.setId(movieForm.getId());	
+		movie.setMainActor(actor);
 		movie.setTitle(movieForm.getTitle());
 		movie.setGenre(movieForm.getGenre());
 		movie.setDescription(movieForm.getDescription()); 

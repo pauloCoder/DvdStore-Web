@@ -9,7 +9,19 @@
 	<body>
 		
 		<form th:action="@{/movie/add}" method="post" th:object="${movieForm}">
-		
+			
+			<p>
+				<label for = "nom">Nom :</label>
+				<input type="text" name = "nom" id = "nom" th:field="*{nom}"/>
+			</p>
+			<div th:if="${#fields.hasErrors('nom')}" th:errors="*{nom}"></div>
+			
+			<p>
+				<label for = "prenom">Prenom :</label>
+				<input type="text" name = "prenom" id = "prenom" th:field="*{prenom}"/>
+			</p>
+			<div th:if="${#fields.hasErrors('prenom')}" th:errors="*{prenom}"></div>
+			
 			<p>
 				<label for = "title">Titre du film :</label>
 				<input type="text" name = "title" id = "title" th:field="*{title}"/>
