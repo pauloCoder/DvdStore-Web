@@ -14,7 +14,7 @@ public class WebApplication {
 	}
 	
 	@Bean
-	Hibernate5Module datatypeHibernateModule()
+	public Hibernate5Module datatypeHibernateModule()
 	{
 		return new Hibernate5Module();
 	}
