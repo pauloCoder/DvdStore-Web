@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.mycompany.dvdstore.core.entity.Movie;
+
+import com.mycompany.dvdstore.core.entity.movie.Movie;
 import com.mycompany.dvdstore.core.service.IMovieService;
 
 @RestController

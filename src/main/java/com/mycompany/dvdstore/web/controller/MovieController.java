@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.mycompany.dvdstore.core.entity.Actor;
-import com.mycompany.dvdstore.core.entity.Movie;
+import com.mycompany.dvdstore.core.entity.movie.Actor;
+import com.mycompany.dvdstore.core.entity.movie.Movie;
 import com.mycompany.dvdstore.core.service.IMovieService;
 import com.mycompany.dvdstore.web.form.MovieForm;
 
