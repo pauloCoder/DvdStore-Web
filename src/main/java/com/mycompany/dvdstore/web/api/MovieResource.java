@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.mycompany.dvdstore.core.entity.movie.Movie;
 import com.mycompany.dvdstore.core.service.IMovieService;
 
+@Deprecated
 @RestController
 @RequestMapping("/movie")
 public class MovieResource 
